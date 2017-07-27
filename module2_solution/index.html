@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="ShoppingListApp">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="app.js" charset="utf-8"></script>
+    <title>Module 2</title>
+  </head>
+  <body class="well" style="border: none;">
+    <style media="screen">
+      .suc{
+        color: green;
+      }
+      .er{
+        color: red;
+      }
+    </style>
+    <div class="container well" style="margin-bottom: 0 !important;">
+      <h1 class="text-center">Module 2 Solution</h1>
+    </div>
+    <div class="container" style: "">
+      <div class="row" style="">
+        <div ng-controller="ToBuyController as list">
+        <div class="col-md-6 well" style="margin-bottom: 0 !important;">
+          <h3>To Buy</h3>
+          <div ng-hide="list.toBuy[0]" class="suc">
+            Everything is Bought!
+          </div>
+          <ol>
+              <li ng-repeat="item in list.toBuy">
+                  {{item.quantity}} of {{item.name}}
+                  <button ng-click="list.itemBought($index)" class="pull-right">bought</button>
+                  <div class="clearfix">
+                  </div>
+              </li>
+          </ol>
+        </div>
+      </div>
+
+        <div ng-controller="AlreadyBoughtController as list">
+
+          <div class="col-md-6 well" style="margin-bottom: 0 !important;">
+            <h3>Already Bought</h3>
+            <div ng-if="!list.alreadyBought[0]" class="er">
+              Nothing Bought Yet!
+            </div>
+            <ol>
+                <li ng-repeat="item in list.alreadyBought">
+                Bought {{item.quantity}} {{item.name}}</li>
+            </ol>
+          </div>
+
+      </div>
+      </div>
+    </div>
+
+
+
+
+  </body>
+</html>
