@@ -33,7 +33,7 @@
         console.log(error);
       });
   }
-    list.remove = function (index) {
+    list.onRemove = function (index) {
       list.found.splice(index, 1);
     }
   }
