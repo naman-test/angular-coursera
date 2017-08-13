@@ -6,8 +6,8 @@ angular.module('MenuApp')
 
   CategoriesController.$inject = ['categories'];
   function CategoriesController(categories){
-    var categoriesCtrl = this;
-    categoriesCtrl.categories = categories;
+    var categoryCtrl = this;
+    categoryCtrl.categories = categories;
   }
 
 })();
